@@ -1,0 +1,23 @@
+server:
+  port: 8701 # 服务提供方
+
+# 指定当前eureka客户端的注册地址,
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8700/eureka
+  instance:
+    hostname: localhost
+
+#当前服务名称
+spring:
+  application:
+    name: eureka-service1
+  datasource:
+    driver: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/student?useUnicode=true&amp;characterEncoding=utf-8
+    username: root
+    password: root
+mybatis:
+  type-aliases-package: com.yun.dao
+  mapper-locations: classpath:mybatis/mapper/*.xml

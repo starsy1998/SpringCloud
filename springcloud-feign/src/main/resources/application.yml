@@ -1,0 +1,15 @@
+server:
+  port: 8705 # 此服务是消费者
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:8700/eureka
+  instance:
+    hostname: localhost
+
+#当前服务名称
+spring:
+  application:
+    name: feign

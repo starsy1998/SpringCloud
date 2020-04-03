@@ -1,0 +1,19 @@
+server:
+  port: 9100
+spring:
+  application:
+    name: zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://10.20.20.184:8700/eureka/
+
+
+zuul:
+  routes:
+    route1:
+      path: /test1/**
+      serviceId: eureka-service
+    host:
+      connect-timeout-millis: 3000
+      socket-timeout-millis: 3000
